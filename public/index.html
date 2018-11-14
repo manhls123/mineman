@@ -3,142 +3,142 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-    <head>
-        <meta name="generator" content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org" />
+<head>
+    <meta name="generator" content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org" />
 
-        <title>GiangMineVPS Manage</title>
-        <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="css/spectre.min.css">
-        <link rel="stylesheet" href="css/spectre-exp.min.css">
-        <link rel="stylesheet" href="css/spectre-icons.min.css">
-        <link rel="stylesheet" href="css/index.css" />
-    </head>
+    <title>GiangMineVPS Manage</title>
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="vendor/spectre.min.css">
+    <link rel="stylesheet" href="vendor/spectre-exp.min.css">
+    <link rel="stylesheet" href="vendor/spectre-icons.min.css">
+    <link rel="stylesheet" href="css/index.css" />
+</head>
 
-    <body>
-        <div id="user" class='column col-6 float-left'>
-            <div class="form-group">
-                <input id='search' class="form-input mt-2" type="text" autocomplete=off placeholder="Search.." />
-            </div>
-            <div class='mt-2'>
-                <h1 id='username' class='card-header'>{{username}}</h1>
-                <div class="card-body">
-                    <p>{{fbid}}</p>
-                </div>
-            </div>
-            <div class='accordion mt-2'>
-                <input type="checkbox" id="accordion-vps" name="accordion-checkbox" hidden>
-                <label class='accordion-header c-hand' for='accordion-vps'>
-                    <i class="icon icon-arrow-right mr-1"></i>
-                    <h2>VPS</h2>
-                </label>
-                <div class='accordion-body'>
-                    <p>Name : {{vpsName}}</p><br>
-                    <p>Ram : {{ram}}</p><br>
-                    <p>Chip : {{chip}}</p>
-                </div>
-            </div>
-            <div class="accordion mt-2">
-                <input type="checkbox" id="accordion-network" name="accordion-checkbox" hidden>
-                <label class='accordion-header b c-hand' for="accordion-network">
-                    <i class="icon icon-arrow-right mr-1"></i>
-                    <h2>Network</h2>
-                </label>
-                <div class="accordion-body">
-                    <p> Public IP : {{pubIP}} </p><br>
-                    <p> Local IP : {{locIP}} </p>
-                    <table class="table table-striped table-hover">
-                        <tr>
-                            <th>local</th>
-                            <th>public</th>
-                            <th>name</th>
-                        </tr>
-
-                        <tr v-for="port in ports">
-                            <td>{{port.local}}</td>
-                            <td>{{port.public}}</td>
-                            <td>{{port.name}}</td>
-                        </tr>
-
-                    </table>
-
-                </div>
-            </div>
-
-            <div class='accordion mt-2'>
-                <input type="checkbox" id="accordion-trans" name="accordion-checkbox" hidden>
-                <label class='accordion-header c-hand' for='accordion-trans'>
-                    <i class="icon icon-arrow-right mr-1"></i>
-                    <h2>Payment log</h2>
-                </label>
-                <div class='accordion-body'>
-                    <div class="form-group col-8 col-ml-auto">
-                        <select class="form-select col-6">
-                            <option value=''>--Select Month--</option>
-                            <option selected value='1'>January</option>
-                            <option value='2'>February</option>
-                            <option value='3'>March</option>
-                            <option value='4'>April</option>
-                            <option value='5'>May</option>
-                            <option value='6'>June</option>
-                            <option value='7'>July</option>
-                            <option value='8'>August</option>
-                            <option value='9'>September</option>
-                            <option value='10'>October</option>
-                            <option value='11'>November</option>
-                            <option value='12'>December</option>
-                        </select>
-                        <select class='form-select col-5 col-ml-auto'>
-                            <option value=''>--Select Year--</option>
-                            <option selected value='2018'>2018</option>
-                            <option value=2019>2019</option>
-                            <option value=2020>2020</option>
-                        </select>
-                    </div>
-                    <div class="card-body">
-                        <table class="trans-table table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th>date</th>
-                                    <th>ammount</th>
-                                    <th>type</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="tran in trans">
-                                    <td>{{tran.date}}</td>
-                                    <td>{{tran.ammount}}</td>
-                                    <td>{{tran.type}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+<body>
+    <div id="user" class='column col-6 float-left'>
+        <div class="form-group">
+            <input id='search' class="form-input mt-2" type="text" autocomplete=off placeholder="Search.." />
+        </div>
+        <div class='mt-2'>
+            <h1 id='username' class='card-header'>{{username}}</h1>
+            <div class="card-body">
+                <p>{{fbid}}</p>
             </div>
         </div>
-
-        <div id='total' class='col-7 float-right'>
-            <table class="trans-table table table-striped table-hover">
-                <thead>
+        <div class='accordion mt-2'>
+            <input type="checkbox" id="accordion-vps" name="accordion-checkbox" hidden>
+            <label class='accordion-header c-hand' for='accordion-vps'>
+                <i class="icon icon-arrow-right mr-1"></i>
+                <h2>VPS</h2>
+            </label>
+            <div class='accordion-body'>
+                <p>Name : {{vpsName}}</p><br>
+                <p>Ram : {{ram}}</p><br>
+                <p>Chip : {{chip}}</p>
+            </div>
+        </div>
+        <div class="accordion mt-2">
+            <input type="checkbox" id="accordion-network" name="accordion-checkbox" hidden>
+            <label class='accordion-header b c-hand' for="accordion-network">
+                <i class="icon icon-arrow-right mr-1"></i>
+                <h2>Network</h2>
+            </label>
+            <div class="accordion-body">
+                <p> Public IP : {{pubIP}} </p><br>
+                <p> Local IP : {{locIP}} </p>
+                <table class="table table-striped table-hover">
                     <tr>
-                        <th>Name</th>
-                        <th>VPS</th>
-                        <th>Ports</th>
-                        <th>Pay</th>
+                        <th>local</th>
+                        <th>public</th>
+                        <th>name</th>
                     </tr>
-                </thead>
-                <tr v-for="row in total">
-                    <td>{{row.name}}</td>
-                    <td>{{row.vps}}</td>
-                    <td>{{row.port}}</td>
-                    <td>{{row.pay}}</td>
-                </tr>
-            </table>
 
+                    <tr v-for="port in ports">
+                        <td>{{port.local}}</td>
+                        <td>{{port.public}}</td>
+                        <td>{{port.name}}</td>
+                    </tr>
+
+                </table>
+
+            </div>
         </div>
-        <script src="js/vendor/vue.js" type="text/javascript"> </script>
-        <script src="js/user.js" type="text/javascript"> </script>
-        <script src="js/total.js" type="text/javascript"> </script>
 
-    </body>
+        <div class='accordion mt-2'>
+            <input type="checkbox" id="accordion-trans" name="accordion-checkbox" hidden>
+            <label class='accordion-header c-hand' for='accordion-trans'>
+                <i class="icon icon-arrow-right mr-1"></i>
+                <h2>Payment log</h2>
+            </label>
+            <div class='accordion-body'>
+                <div class="form-group col-8 col-ml-auto">
+                    <select class="form-select col-6">
+                        <option value=''>--Select Month--</option>
+                        <option selected value='1'>January</option>
+                        <option value='2'>February</option>
+                        <option value='3'>March</option>
+                        <option value='4'>April</option>
+                        <option value='5'>May</option>
+                        <option value='6'>June</option>
+                        <option value='7'>July</option>
+                        <option value='8'>August</option>
+                        <option value='9'>September</option>
+                        <option value='10'>October</option>
+                        <option value='11'>November</option>
+                        <option value='12'>December</option>
+                    </select>
+                    <select class='form-select col-5 col-ml-auto'>
+                        <option value=''>--Select Year--</option>
+                        <option selected value='2018'>2018</option>
+                        <option value=2019>2019</option>
+                        <option value=2020>2020</option>
+                    </select>
+                </div>
+                <div class="card-body">
+                    <table class="trans-table table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>date</th>
+                                <th>ammount</th>
+                                <th>type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="tran in trans">
+                                <td>{{tran.date}}</td>
+                                <td>{{tran.ammount}}</td>
+                                <td>{{tran.type}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id='total' class='col-7 float-right'>
+        <table class="trans-table table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>VPS</th>
+                    <th>Ports</th>
+                    <th>Pay</th>
+                </tr>
+            </thead>
+            <tr v-for="row in total">
+                <td>{{row.name}}</td>
+                <td>{{row.vps}}</td>
+                <td>{{row.port}}</td>
+                <td>{{row.pay}}</td>
+            </tr>
+        </table>
+
+    </div>
+    <script src="vendor/vue.js" type="text/javascript"> </script>
+    <script src="js/user.js" type="text/javascript"> </script>
+    <script src="js/total.js" type="text/javascript"> </script>
+
+</body>
 
 </html>
