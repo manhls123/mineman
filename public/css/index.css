@@ -1,0 +1,31 @@
+h1, h2, p, input, table {
+    font-family: 'Space Mono', monospace;
+}
+
+div > p {
+    display: inline
+}
+
+div > input.ram-usage {
+    width: 3pt;
+}
+
+
+th {
+    width: 5em;
+    text-align: left;
+}
+
+thead {
+    width: 100%;
+}
+
+
+
+#user {
+    max-width : 30em;
+}
+
+.accordion-header > h2 {
+    display: inline;
+}
